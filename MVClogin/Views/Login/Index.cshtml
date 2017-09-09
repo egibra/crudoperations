@@ -1,0 +1,116 @@
+﻿@model MVClogin.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>    
+   <link href="~/Content/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Shadow Login Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+    <div class="main-agileinfo slider ">
+        <div class="items-group">
+            <div class="item agileits-w3layouts">
+                <div class="block text main-agileits">
+                    <span class="circleLight"></span>
+                    <!-- login form -->
+                    <div class="login-form loginw3-agile">
+                        <div class="agile-row">
+                            <h1>Welcome</h1> 
+                            <div class="login-agileits-top">
+@using (Html.BeginForm("Autherize", "Login", FormMethod.Post))
+{
+                                    <div>
+                                    @Html.LabelFor(model => model.UserName)
+                                    @Html.EditorFor(model => model.UserName)
+                                    </div>   
+                                    <p></p>
+                                     <div>
+                                     @Html.LabelFor(model => model.Password) 
+                                     @Html.EditorFor(model => model.Password) 
+                                    </div>
+                                    <p>@Html.ValidationMessageFor(model => model.Password)</p>
+                                    <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage) </label>
+
+                                    <input type="submit" name="name" value="Login" />
+}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>	 
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<div id="login-div"> 
+        @using (Html.BeginForm("Autherize", "Login",FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td></td>
+                    <td style="text-decoration: underline"> Present Connection</td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(model => model.UserName)</td>
+                    <td> @Html.EditorFor(model => model.UserName)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.UserName) </td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(model => model.Password) </td>
+                    <td> @Html.EditorFor(model => model.Password) </td>
+                </tr>  
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Password) </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage) </label>
+                    </td>
+                </tr>
+                <tr>              
+                    <td></td>
+                    <td>
+                          <input type="submit" name="name" value="Login" /> 
+                          <input type="reset" name="name" value="Clear" />
+                    </td>
+
+                </tr>
+            </table>
+        }
+
+    </div>*@
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>>
+</body>
+</html>
